@@ -41,7 +41,8 @@
         .previous {
             color: #888;
             font-size: 14px;
-            min-height: 20px;
+            height: 20px;
+            overflow: hidden;
             word-wrap: break-word;
         }
         
@@ -49,7 +50,8 @@
             color: #fff;
             font-size: 36px;
             font-weight: 300;
-            min-height: 45px;
+            height: 45px;
+            overflow: hidden;
             word-wrap: break-word;
         }
         
@@ -114,10 +116,6 @@
             opacity: 0.9;
         }
         
-        .btn-zero {
-            grid-column: span 2;
-        }
-        
         .footer {
             text-align: center;
             margin-top: 20px;
@@ -154,7 +152,7 @@
             <button class="btn-number" onclick="appendNumber('3')">3</button>
             <button class="btn-operator" onclick="appendOperator('+')">+</button>
             
-            <button class="btn-number btn-zero" onclick="appendNumber('0')">0</button>
+            <button class="btn-number" onclick="appendNumber('0')">0</button>
             <button class="btn-number" onclick="appendDecimal()">.</button>
             <button class="btn-equals" onclick="calculate()">=</button>
         </div>
@@ -235,7 +233,7 @@
                     break;
                 case '/':
                     if (curr === 0) {
-                        result = '错误';
+                        result = 'ERROR';
                     } else {
                         result = prev / curr;
                     }
